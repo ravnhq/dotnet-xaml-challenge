@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:UI.Models"
+             x:Class="UI.Views.MainPage"
+             Title="MainPage">
+    <VerticalStackLayout>
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="2" Stroke="#FF0000">
+            <VerticalStackLayout Padding="20" Spacing="10">
+                <Entry x:Name="CustomerId" Placeholder="CustomerId" Text="{Binding CustomerId}" />
+                <Entry x:Name="Subject" Placeholder="Subject" Text="{Binding Subject}"/>
+                <Button Text="Submit" Command="{Binding CreateTicketCommand}"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="2" Stroke="#FF0000">
+            <VerticalStackLayout Padding="20" Spacing="10">
+                <Picker Title="Status" SelectedItem="{Binding Status}" TitleColor="#FF0000" TextColor="#FF0000" Margin="0,10,0,0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Open</x:String>
+                            <x:String>InProgress</x:String>
+                            <x:String>Closed</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Picker Title="Sort" SelectedItem="{Binding Sort}" TitleColor="#FF0000" TextColor="#FF0000" Margin="0,10,0,0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>asc</x:String>
+                            <x:String>desc</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Button Text="Get Tickets" Command="{Binding ShowTicketsCommand}"/>
+
+                <CollectionView x:Name="TicketsCollectionView" ItemsSource="{Binding Tickets}" Grid.Row="1" Margin="0,10,0,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Ticket">
+                            <Grid Margin="5"
+                                ColumnDefinitions="*,Auto"
+                                RowDefinitions="Auto,Auto,Auto"
+                            >
+                                <Label Text="{Binding Subject}"/>
+                                <Label Grid.Row="1" Text="{Binding CustomerName}"/>
+                                <Label Grid.Column="1" Text="{Binding Status}"/>
+                                <Label Grid.Row="2" 
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Id}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label Text="No tickets available" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#FF0000"/>
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </VerticalStackLayout>
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>
