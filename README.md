@@ -10,7 +10,9 @@ The challenge consists of two main parts:
 
 ## Part 1: Backend API
 
-In this part, you must implement a REST API for support ticket management. You have already been provided with part of the base code that you need to complete.
+In this part, you must implement a REST API endpoint for support ticket management. You have already been provided with part of the base code that you need to complete.
+
+The base code is using **EntityFramework** and **SqLite**. Everything is already configure for you to be able to use it.
 
 ### Requirements
 
@@ -30,7 +32,7 @@ This endpoint should return a paginated list of tickets, with the ability to fil
 
 ## Part 2: MAUI Application (.NET Multi-platform App UI)
 
-You must develop windows desktop application following the design provided in the diagram, which consumes the API implemented in part 
+You must develop windows desktop application following the design provided in the diagram, which consumes the API endpoint implemented in part 1
 
 ### Proposed UI Diagram
 ![UI Diagram](./img/UI.png)
