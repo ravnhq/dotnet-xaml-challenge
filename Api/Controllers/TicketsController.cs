@@ -1,9 +1,7 @@
 using Api.Contracts.Input;
 using Api.Contracts.Ouput;
 using Api.Data;
-using Api.Extensions;
 using Api.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,11 +18,6 @@ public class TicketsController : ControllerBase
         _dbContext = dbContext;
     }
 
-    [HttpGet]
-    public async Task<PagedOutputDto<TicketListOutputDto>> GetList([FromQuery] TicketListInputDto request)
-    {
-        throw new NotImplementedException();
-    }
 
     [HttpPost]
     public async Task<ActionResult<TicketDetailOuputDto>> CreateTicket(CreateTicketInputDto request)
