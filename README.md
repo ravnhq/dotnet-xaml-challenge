@@ -35,7 +35,7 @@ This endpoint should return a paginated list of tickets, with the ability to fil
 You must develop windows desktop application following the design provided in the diagram, which consumes the API endpoint implemented in part 1
 
 ### Proposed UI Diagram
-![UI Diagram](./img/UI.png)
+![UIDiagram](img/Ui.png)
 
 ### Requirements
 
