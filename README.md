@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Ticket Management System development challenge. This challenge will evaluate your skills in developing RESTful APIs and mobile applications with .NET MAUI.
+Welcome to the Ticket Management System development challenge. This challenge will evaluate your skills in developing RESTful APIs and desktop applications with .NET MAUI.
 
 The challenge consists of two main parts:
 1. Backend API: Implementation and enhancement of endpoints to manage tickets
@@ -56,6 +56,7 @@ The application must include:
 
 ## Additional details
 You can ask any questions to the people accompanying you in the interview.
+Create Ticket code sample id provided on the UI side.
 
 
 ## Project Setup
